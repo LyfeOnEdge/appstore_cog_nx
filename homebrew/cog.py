@@ -172,7 +172,7 @@ class Homebrew(Cog):
         log_channel = self.bot.get_channel(config.botlog_channel)
         await log_channel.send("Reloading homebrew database...")
         db_json = await self.get_json(config.repo_url)
-        self.db.load_json(data)
+        self.db.load_json(db_json)
         await log_channel.send("Found {} packages in repo: {}".format(self.get_repo_size(), config.repo_url))
 
     def get_repo_size(self):
